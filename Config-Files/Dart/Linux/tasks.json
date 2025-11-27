@@ -1,0 +1,49 @@
+//Author : Sanjidul Alom Shifat
+//date: Thurs 27 Nov 2025 02:30:45 PM +06
+//Task:shortcut to run a dart file which will take input and show output of the programme automatically with programme runtime status such as memory comsume and execution time
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile and run Dart",
+            "type": "shell",
+            "command": "",
+            "args": [
+                "/usr/bin/time",
+                "-v",
+                "--output",
+                "sys.txt",
+                "timeout",
+                "5",
+                "dart",
+                "${relativeFile}",
+                "<",
+                "input.txt",
+                ">",
+                "output.txt"
+            ],
+            "presentation": {
+                "reveal": "silent"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": {
+                "owner": "py",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceRoot}"
+                ],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            }
+        },
+    ]
+}

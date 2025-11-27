@@ -1,0 +1,23 @@
+{
+	"Main Function": {
+		"prefix": [
+			"init class",
+			"default"
+		],
+		"body": [
+			"/*\n\nAuthor : Sanjidul Alom Shifat\n",
+			"github: https://github.com/Sanjidul-Alom-Shifat\n",
+			"linkedin : https://www.linkedin.com/in/sanjidul-alom-shifat/\n",
+			"*/\n\n\n",
+			"import java.util.Scanner;\n\n",
+			"\tpublic class ${TM_FILENAME_BASE} {\n",
+			"\tpublic static void main(String[] args) {\n",
+			"\t\tScanner in = new Scanner(System.in);\n",
+			"\t\t${0:}\n",
+			"}\n",
+			"}\n",
+			""
+		],
+		"description": "This is a c++ sniffpet",
+	}
+}

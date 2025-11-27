@@ -1,0 +1,112 @@
+//Author : Sanjidul Alom Shifat
+//date: Thurs 27 Nov 2025 02:30:45 PM +06
+// Task : shortcut to run a java file which will take input and show output of the programme automatically with programme runtime status such as memory consume and execution time
+// special feature: This single tasks.json file will work on mac, windows and linux (debian based) OSs.
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Compile and run Java program",
+        "type": "shell",
+        "windows": {
+          "command": "",
+          "args": [
+            "javac",
+            "${relativeFile}",
+            "-d",
+            "${workspaceFolder}",
+            "&&",
+            "java",
+            "${fileBasenameNoExtension}",
+            "<",
+            "input.txt",
+            ">",
+            "output.txt",
+            "&&",
+            "del",
+            "-rf",
+            "*.class"
+          ],
+          "options": {
+            "shell": {
+              "executable": "cmd.exe",
+              "args": [
+                "/d",
+                "/c"
+              ]
+            }
+          }
+        },
+        "linux": {
+          "command": "javac",
+          "args": [
+            "${relativeFile}",
+            "-d",
+            "${workspaceFolder}",
+            "&&",
+            "/usr/bin/time",
+            "-o",
+            "analysis.txt",
+            "timeout",
+            "5",
+            "java",
+            "${fileBasenameNoExtension}",
+            "<",
+            "input.txt",
+            ">",
+            "output.txt",
+            "&&",
+            "rm",
+            "-rf",
+            "*.class"
+          ]
+        },
+        "osx": {
+          "command": "javac",
+          "args": [
+            "${relativeFile}",
+            "-d",
+            "${workspaceFolder}",
+            "&&",
+            "/usr/bin/time",
+            "-o",
+            "analysis.txt",
+            "timeout",
+            "5",
+            "java",
+            "${fileBasenameNoExtension}",
+            "<",
+            "input.txt",
+            ">",
+            "output.txt",
+            "&&",
+            "rm",
+            "-rf",
+            "*.class"
+          ]
+        },
+        "presentation": {
+          "reveal": "silent"
+        },
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": {
+          "owner": "java",
+          "fileLocation": [
+            "relative",
+            "${workspaceRoot}"
+          ],
+          "pattern": {
+            "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+            "file": 1,
+            "line": 2,
+            "column": 3,
+            "severity": 4,
+            "message": 5
+          }
+        }
+      }
+    ]
+  }

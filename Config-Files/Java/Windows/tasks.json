@@ -1,0 +1,61 @@
+//Author : Sanjidul Alom Shifat
+//date: Thurs 27 Nov 2025 02:30:45 PM +06
+//Task:shortcut to run a java file which will take input and show output of the programme automatically with programme runtime status such as memory comsume and execution time
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile and run",
+            "type": "shell",
+            "command": "",
+            "args": [
+                "javac",
+                "${relativeFile}",
+                "-d",
+                "${workspaceFolder}",
+                "&&",
+                "java",
+                "${fileBasenameNoExtension}",
+                "<",
+                "input.txt",
+                ">",
+                "output.txt",
+                "&&",
+                "del",
+                "-rf",
+                "*.class"
+            ],
+            "presentation": {
+                "reveal": "silent"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": {
+                "owner": "py",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceRoot}"
+                ],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            },
+            "options": {
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": [
+                        "/d",
+                        "/c"
+                    ]
+                }
+            }
+        }
+    ]
+}

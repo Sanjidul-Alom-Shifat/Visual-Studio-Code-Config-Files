@@ -1,0 +1,17 @@
+{
+	"Author": {
+		"prefix": "inc",
+		"body": [
+			"\n\n#Author :  Sanjidul Alom Shifat\n",
+			"#Github        : https://github.com/Sanjidul-Alom-Shifat\n",
+			"#Gists         : https://gist.github.com\n",
+			"#linkedin      : https://www.linkedin.com/in/sanjidul-alom-shifat/\n",
+			"\n\n",
+			"def main():",
+			"	$2\n\n",
+			"if __name__ == \"__main__\":",
+			"	main()\n",
+		],
+		"description": "Author Description"
+	}
+}
